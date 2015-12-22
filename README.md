@@ -352,6 +352,23 @@ This flattens code otherwise tucked into an `if let` block, and keeps early exit
 
 Even when you're not capturing a value (`guard let`), this pattern enforces the early exit at compile time. In the second if example, though code is flattened like with guard, accidentally changing from a fatal error or other return to some non-exiting operation will cause a crash (or invalid state depending on the exact case). Removing an early exit from the else block of a guard statement would immediately reveal the mistake.
 
+####Use functional programming
+Swift comes with thre funcions `map, reduce, filter` to work with arrays that are efficient and avoid verbosity in the code. For instance you can converte from:
+```Swift
+var source = [1, 3, 5, 7, 9]
+var result = [Int]()
+for i in source {
+    let timesTwo = i * 2
+    if timesTwo > 5 && timesTwo < 15 {
+        result.append(timesTwo)
+    }
+}
+```
+to:
+```Swift
+let result2 = source.map { $0 * 2 }
+                    .filter { $0 > 5 && $0 < 15 }
+```
 
 
 
