@@ -225,6 +225,9 @@ let centerPoint = CGPointMake(96, 42)
 ```
 
 ##Programming Best Practices
+### Design patterns
+Using design patterns help to come out with cool solutions and really clean code, this is a good repository with design patterns implementd in swift: https://github.com/ochococo/Design-Patterns-In-Swift#structural
+
 ###Optionals
 ####Avoid Using Force-Unwrapping of Optionals
 If you have an identifier foo of type `FooType?` or `FooType!`, don't force-unwrap it to get to the underlying value (foo!) if possible.
