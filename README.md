@@ -226,7 +226,7 @@ let centerPoint = CGPointMake(96, 42)
 
 ##Programming Best Practices
 ### Design patterns
-Using design patterns help to come out with cool solutions and really clean code, this is a good repository with design patterns implementd in swift: https://github.com/ochococo/Design-Patterns-In-Swift#structural
+Using design patterns helps to come out with cool solutions and really clean code, this is a good repository with design patterns implementd in swift: https://github.com/ochococo/Design-Patterns-In-Swift#structural
 
 ###Optionals
 ####Avoid Using Force-Unwrapping of Optionals
@@ -356,7 +356,7 @@ This flattens code otherwise tucked into an `if let` block, and keeps early exit
 Even when you're not capturing a value (`guard let`), this pattern enforces the early exit at compile time. In the second if example, though code is flattened like with guard, accidentally changing from a fatal error or other return to some non-exiting operation will cause a crash (or invalid state depending on the exact case). Removing an early exit from the else block of a guard statement would immediately reveal the mistake.
 
 ####Use functional programming
-Swift comes with thre funcions `map, reduce, filter` to work with arrays that are efficient and avoid verbosity in the code. For instance you can converte from:
+Swift comes with three functions `map, reduce, filter` to work with arrays that are efficient and avoid verbosity in the code. For instance you can converte from:
 ```Swift
 var source = [1, 3, 5, 7, 9]
 var result = [Int]()
