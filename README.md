@@ -1,4 +1,66 @@
 ##Code Guidelines
+###Code Documentation
+Documentation comments are distinguished by using /** ... */ for multi-line comments or /// for single-line comments. Inside comment blocks, the conventions you’ve gotten used to when writing Markdown everywhere else apply:
+* Paragraphs are separated by blank lines
+* Unordered lists can use a variety of bullet characters: -, +, *, •
+* Ordered lists use Arabic numerals (1, 2, 3, …) followed by a period 1. or right parenthesis 1):
+* Headers can be marked with preceding # signs or by underlining with = or -.
+* Even links and images work, with web-based images pulled down and displayed directly in Xcode.
+```Swift
+/**
+    # Lists
+
+    You can apply *italic*, **bold**, or `code` inline styles.
+
+    ## Unordered Lists
+
+    - Lists are great,
+    - but perhaps don't nest
+    - Sub-list formatting
+
+      - isn't the best.
+
+    ## Ordered Lists
+
+    1. Ordered lists, too
+    2. for things that are sorted;
+    3. Arabic numerals
+    4. are the only kind supported.
+*/
+```
+### Class Header Comments
+Each new class or struct has to have a header explaining what the class does, the author and the created date.
+```Swift
+/**
+This class was designed and implemented to help people covert temperatures between the Fahrenheit and Celsius scales.
+
+author: patrickclose92
+
+created: 07/01/2016
+*/
+```
+####Method Comments
+It's important to document each method that adds new functionality to the app, explaining with a short description what the method does, who is the author, the created date, the parameters, throws, and the return.
+```Swift
+/**
+    Repeats a string `times` times.
+    
+    author: patrickclose
+    created: 07/01/2016
+    
+    - Parameter str:   The string to repeat.
+    - Parameter times: The number of times to repeat `str`.
+
+    - Throws: `MyError.InvalidTimes` if the `times` parameter 
+        is less than zero.
+
+    - Returns: A new string with `str` repeated `times` times.
+*/
+func repeatString(str: String, times: Int) throws -> String {
+    guard times >= 0 else { throw MyError.InvalidTimes }
+    return Repeat(count: 5, repeatedValue: "Hello").joinWithSeparator("")
+}
+```
 ###Naming
 Use descriptive names with camel case for classes, methods, variables, etc. Class names should be capitalized, while method names and variables should start with a lower case letter.
 #####Prefered:
